@@ -90,13 +90,16 @@ table {
 
 th,
 td {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   text-align: center;
   padding: 0.5rem 1rem;
   color: var(--primary);
+}
+
+td {
   max-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 td:last-child {
