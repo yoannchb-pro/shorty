@@ -120,8 +120,22 @@ a {
   color: var(--primary);
 }
 
-#error {
+#info {
   text-align: center;
   display: none;
-  color: var(--error);
+  white-space: pre-wrap;
+}
+
+#next {
+  background-color: var(--secondary);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  opacity: 0.75;
+}
+
+#next:hover {
+  opacity: 1;
+  letter-spacing: 0.02rem;
 }

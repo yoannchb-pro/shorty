@@ -46,13 +46,14 @@ app.get("/add/:url", function (req, res) {
   const insertStmt = db.prepare(
     "INSERT INTO links (fullLink, id, clicks) VALUES (?, ?, ?)"
   );
-  insertStmt.run(url, shortid(), 0, (err: any) => {
+  const id = shortid();
+  insertStmt.run(url, id, 0, (err: any) => {
     if (err) {
       res.status(505);
       res.send(err);
       return;
     }
-    res.json({ status: "OK" });
+    res.json({ status: "OK", data: { id, fullLink: url, clicks: 0 } });
   });
 });
 
